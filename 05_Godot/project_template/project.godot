@@ -1,0 +1,45 @@
+; Engine configuration file - VACUUM HEROES
+; Copy this into a new Godot 4.3+ project root as project.godot
+; Then add Autoloads: Economy, GameManager
+
+config_version=5
+
+[application]
+
+config/name="Vacuum Heroes"
+config/description="VACUUM HEROES / שואב הגיבורים"
+run/main_scene="res://scenes/ui/main_menu.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Economy="*res://scripts/economy.gd"
+GameManager="*res://scripts/game_manager.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/window_width_override=540
+window/size/window_height_override=960
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
+window/handheld/orientation=1
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[input]
+
+turbo={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
