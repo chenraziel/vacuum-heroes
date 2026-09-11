@@ -1,6 +1,6 @@
 # VACUUM HEROES / שואב הגיבורים
 ## Master Package – Ready to Build
-**Version:** 1.1 | **Date:** September 2026 | **CEO Approved**
+**Version:** 1.2 | **Date:** September 2026 | **CEO Approved**
 
 ### Links
 - GitHub: https://github.com/chenraziel/vacuum-heroes
@@ -16,7 +16,7 @@
 6. **06_SoftLaunch** – Strategy + checklist
 7. **07_Assets_Guide** – Free assets
 8. **08_Developer_Brief** – Studio handoff
-9. **09_Founder_Actions** – Day 1 exact steps (HE) + approvals
+9. **09_Founder_Actions** – Day 1–3 exact steps (HE) + approvals + win/lose/pause scripts
 
 ### Start today
 Read: `09_Founder_Actions/DAY1_EXACT_STEPS_HE.md`
