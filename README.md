@@ -1,5 +1,5 @@
 # VACUUM HEROES / שואב הגיבורים
-**Version 1.3 | CEO Package | Ready to Build**
+**Version 1.4 | CEO Package | Ready to Build**
 
 ## Links
 - GitHub: https://github.com/chenraziel/vacuum-heroes
@@ -27,3 +27,7 @@
 3. Or run `09_Founder_Actions/BOOTSTRAP.sh`
 
 No Pay-to-Win. Fun first.
+
+
+## Playable Godot project
+Import folder: `05_Godot/godot_project` (has project.godot + test_arena.tscn)

@@ -1,0 +1,23 @@
+{
+  "play": {"he": "שחק", "en": "PLAY"},
+  "shop": {"he": "חנות", "en": "SHOP"},
+  "settings": {"he": "הגדרות", "en": "SETTINGS"},
+  "level_select": {"he": "בחר רמה", "en": "LEVEL SELECT"},
+  "victory": {"he": "ניצחון!", "en": "VICTORY!"},
+  "defeat": {"he": "נגמר הזמן!", "en": "TIME UP!"},
+  "retry": {"he": "נסה שוב", "en": "RETRY"},
+  "home": {"he": "בית", "en": "HOME"},
+  "next": {"he": "הבא", "en": "NEXT"},
+  "resume": {"he": "המשך", "en": "RESUME"},
+  "energy": {"he": "אנרגיה", "en": "ENERGY"},
+  "coins": {"he": "מטבעות", "en": "COINS"},
+  "gems": {"he": "יהלומים", "en": "GEMS"},
+  "score": {"he": "ניקוד", "en": "SCORE"},
+  "combo": {"he": "קומבו", "en": "COMBO"},
+  "vip": {"he": "מנוי פרימיום", "en": "VIP"},
+  "battle_pass": {"he": "מעבר עונה", "en": "BATTLE PASS"},
+  "daily": {"he": "פרס יומי", "en": "DAILY REWARD"},
+  "not_enough_energy": {"he": "אין מספיק אנרגיה", "en": "Not enough energy"},
+  "restore": {"he": "שחזור רכישות", "en": "Restore Purchases"},
+  "loading": {"he": "טוען...", "en": "Loading..."}
+}

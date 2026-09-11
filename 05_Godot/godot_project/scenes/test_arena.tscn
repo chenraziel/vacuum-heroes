@@ -1,0 +1,192 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_player"]
+[ext_resource type="Script" path="res://scripts/vacuum.gd" id="2_vacuum"]
+[ext_resource type="Script" path="res://scripts/dirt.gd" id="3_dirt"]
+[ext_resource type="Script" path="res://scripts/gem.gd" id="4_gem"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="5_hud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vacuum"]
+radius = 80.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dirt"]
+size = Vector2(48, 48)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gem"]
+radius = 24.0
+
+[node name="TestArena" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1080.0
+offset_bottom = 1920.0
+color = Color(0.12, 0.12, 0.16, 1)
+
+[node name="FloorHint" type="ColorRect" parent="."]
+offset_left = 40.0
+offset_top = 200.0
+offset_right = 1040.0
+offset_bottom = 1700.0
+color = Color(0.22, 0.2, 0.28, 1)
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(540, 960)
+script = ExtResource("1_player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_player")
+
+[node name="Body" type="ColorRect" parent="Player"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(0.45, 0.15, 0.85, 1)
+
+[node name="Accent" type="ColorRect" parent="Player"]
+offset_left = -20.0
+offset_top = 8.0
+offset_right = 20.0
+offset_bottom = 28.0
+color = Color(0.98, 0.45, 0.1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+
+[node name="VacuumHead" type="Area2D" parent="Player" groups=["vacuum"]]
+script = ExtResource("2_vacuum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/VacuumHead"]
+shape = SubResource("CircleShape2D_vacuum")
+
+[node name="Glow" type="ColorRect" parent="Player/VacuumHead"]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.2, 0.6, 1, 0.25)
+
+[node name="Dirt1" type="Area2D" parent="." groups=["dirt"]]
+position = Vector2(300, 700)
+script = ExtResource("3_dirt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dirt1"]
+shape = SubResource("RectangleShape2D_dirt")
+
+[node name="Visual" type="ColorRect" parent="Dirt1"]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+color = Color(0.4, 0.28, 0.15, 1)
+
+[node name="Dirt2" type="Area2D" parent="." groups=["dirt"]]
+position = Vector2(700, 900)
+script = ExtResource("3_dirt")
+dirt_value = 15
+max_hp = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dirt2"]
+shape = SubResource("RectangleShape2D_dirt")
+
+[node name="Visual" type="ColorRect" parent="Dirt2"]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+color = Color(0.35, 0.25, 0.12, 1)
+
+[node name="Dirt3" type="Area2D" parent="." groups=["dirt"]]
+position = Vector2(500, 1200)
+script = ExtResource("3_dirt")
+dirt_value = 20
+max_hp = 50.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dirt3"]
+shape = SubResource("RectangleShape2D_dirt")
+
+[node name="Visual" type="ColorRect" parent="Dirt3"]
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 28.0
+color = Color(0.3, 0.2, 0.1, 1)
+
+[node name="Gem1" type="Area2D" parent="." groups=["gem"]]
+position = Vector2(400, 500)
+script = ExtResource("4_gem")
+gem_color = Color(1, 0.3, 0.9, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gem1"]
+shape = SubResource("CircleShape2D_gem")
+
+[node name="Visual" type="ColorRect" parent="Gem1"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(1, 0.3, 0.9, 1)
+
+[node name="Gem2" type="Area2D" parent="." groups=["gem"]]
+position = Vector2(800, 1100)
+script = ExtResource("4_gem")
+gem_value = 80
+gem_color = Color(0.2, 0.9, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gem2"]
+shape = SubResource("CircleShape2D_gem")
+
+[node name="Visual" type="ColorRect" parent="Gem2"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0.2, 0.9, 1, 1)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("5_hud")
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 400.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 28
+text = "SCORE: 0"
+
+[node name="TimerLabel" type="Label" parent="HUD"]
+offset_left = 40.0
+offset_top = 90.0
+offset_right = 400.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 28
+text = "TIME: 90"
+
+[node name="EnergyLabel" type="Label" parent="HUD"]
+offset_left = 40.0
+offset_top = 140.0
+offset_right = 400.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 28
+text = "ENERGY: 100"
+
+[node name="ComboLabel" type="Label" parent="HUD"]
+offset_left = 800.0
+offset_top = 40.0
+offset_right = 1040.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 36
+text = ""
+horizontal_alignment = 2
+
+[node name="Hint" type="Label" parent="HUD"]
+offset_left = 40.0
+offset_top = 1800.0
+offset_right = 1040.0
+offset_bottom = 1880.0
+theme_override_font_sizes/font_size = 22
+text = "גרור = תנועה | החזק = Turbo | שאוב חום + אסוף צבעוני"
+horizontal_alignment = 1
